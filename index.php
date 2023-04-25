@@ -61,6 +61,21 @@ foreach ($lignes as $ligne) {
     }
     echo '</tr>';
 }
+//envoyer le tableau trié par importance et coloré
+// foreach ($donnees as $ligne) {
+//     $prio = strtolower($ligne[1]);
+//     if ($prio == 'important') {
+//         echo '<tr style="background-color: red">';
+//     } elseif ($prio == 'moyen') {
+//         echo '<tr style="background-color: yellow">';
+//     } else {
+//         echo '<tr>';
+//     }
+//     foreach ($ligne as $colonne) {
+//         echo '<td>' . $colonne . '</td>';
+//     }
+//     echo '</tr>';
+// }
 echo '</tbody>';
 echo '</table>';
 
@@ -69,5 +84,5 @@ echo '</table>';
 // $sujet = 'Tableau HTML des 5 premières lignes du fichier CSV';
 // $headers = 'From: monadresse@mail.com' . "\r\n";
 // $headers .= 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-// $message = '<html><body><p>Voici le tableau HTML des 10 premières lignes du fichier CSV :</p>' . $table_html . '</body></html>';
+// $message = '<html><body><p>Voici le tableau HTML des 5 premières lignes du fichier CSV :</p>' . $table_html . '</body></html>';
 // mail($destinataire, $sujet, $message, $headers);
