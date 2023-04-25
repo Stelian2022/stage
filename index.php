@@ -21,7 +21,7 @@
 // Ouvrir le fichier CSV en mode lecture
 $fichier = fopen('Formulaire.csv', 'r');
 
-//  Lire les 10 premières lignes du fichier CSV et les stocker dans un tableau
+//  Lire les 5 premières lignes du fichier CSV et les stocker dans un tableau
 $lignes = array();
 $lignes = array();
 for ($i = 0; $i < 5 && ($ligne = fgetcsv($fichier, 0, ';')) !== false; $i++) {
@@ -66,7 +66,7 @@ echo '</table>';
 
 // // Envoyer l'email avec le tableau HTML en tant que contenu
 // $destinataire = 'exemple@gmail.com';
-// $sujet = 'Tableau HTML des 3 premières lignes du fichier CSV';
+// $sujet = 'Tableau HTML des 5 premières lignes du fichier CSV';
 // $headers = 'From: monadresse@mail.com' . "\r\n";
 // $headers .= 'Content-Type: text/html; charset=UTF-8' . "\r\n";
 // $message = '<html><body><p>Voici le tableau HTML des 10 premières lignes du fichier CSV :</p>' . $table_html . '</body></html>';
