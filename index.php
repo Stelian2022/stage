@@ -22,7 +22,7 @@
 $fichier = fopen('Formulaire.csv', 'r');
 
 //  Lire les 5 premières lignes du fichier CSV et les stocker dans un tableau
-$lignes = array();
+
 $lignes = array();
 for ($i = 0; $i < 5 && ($ligne = fgetcsv($fichier, 0, ';')) !== false; $i++) {
     $lignes[] = $ligne;
@@ -54,28 +54,28 @@ echo '<thead>';
 echo '<tr><th>Tache</th><th>Contenue</th><th>Date</th></tr>';
 echo '</thead>';
 echo '<tbody>';
-foreach ($lignes as $ligne) {
-    echo '<tr>';
-    foreach ($ligne as $colonne) {
-        echo '<td>' . $colonne . '</td>';
-    }
-    echo '</tr>';
-}
-//envoyer le tableau trié par importance et coloré
-// foreach ($donnees as $ligne) {
-//     $prio = strtolower($ligne[1]);
-//     if ($prio == 'important') {
-//         echo '<tr style="background-color: red">';
-//     } elseif ($prio == 'moyen') {
-//         echo '<tr style="background-color: yellow">';
-//     } else {
-//         echo '<tr>';
-//     }
+// foreach ($lignes as $ligne) {
+//     echo '<tr>';
 //     foreach ($ligne as $colonne) {
 //         echo '<td>' . $colonne . '</td>';
 //     }
 //     echo '</tr>';
 // }
+//envoyer le tableau trié par importance et coloré
+foreach ($lignes as $ligne) {
+    $prio = strtolower($ligne[1]);
+    if ($prio == 'important') {
+        echo '<tr style="background-color: red">';
+    } elseif ($prio == 'moyen') {
+        echo '<tr style="background-color: yellow">';
+    } else {
+        echo '<tr>';
+    }
+    foreach ($ligne as $colonne) {
+        echo '<td>' . $colonne . '</td>';
+    }
+    echo '</tr>';
+}
 echo '</tbody>';
 echo '</table>';
 
